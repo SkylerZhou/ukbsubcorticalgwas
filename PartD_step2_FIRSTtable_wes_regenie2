@@ -1,22 +1,7 @@
 # dx login
-vi regenie2.sh
+vi d2.sh
 
 # note: I changed all file path in pred.list into /mnt/project/Regenie1_PartB/FIRST/
-
-#!/bin/bash
-
-# Inputs:
-# Note that you can adjust the output directory by setting the data_file_dir variable
-# - /Data/diabetes_wes_200k.phe - from part A (please refer to notebook & slides)
-# - /Data/diabetes_results_1.loco.gz - from part D
-# - /Data/diabetes_results_pred.list - from part D
-
-# Additional inputs
-# for each chromosome, you will run a separate worker
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bed - Chr1 file for 200k release
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bim 
-# - /{exome_file_dir}/ukb23155_c1_b0_v1.bam 
-# - /Data/WES_c1_snps_qc_pass.snplist - from Part E
 
 # Outputs (for each chromosome):
 # - /Data/assoc.c1_diabetes_cc.regenie.gz - regenie results for chromosome 1 
@@ -53,44 +38,6 @@ for chr in {1..22}; do
 done
 
 # run 
-chmod +x regenie2.sh
-bash regenie2.sh
+chmod +x d2.sh
+bash d2.sh
 
-
-
-wc -l "/mnt/project/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release/helper_files/ukb23158_500k_OQFE.variant_ID_mappings.txt"
-27051960 
--log10(0.05/27051960/1405) = 11.88
-
-wc -l "/mnt/project/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release/helper_files/ukb23158_500k_OQFE.90pct10dp_qc_variants.txt"
-5798366
-
-zcat "/mnt/project/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release/helper_files/ukb23158_500k_OQFE.annotations.txt.gz" | less
-1:69095:T:G OR4F5(ENSG00000186092) missense(>=1/5)
-1:69134:A:G OR4F5(ENSG00000186092) missense(0/5)
-1:69144:C:T OR4F5(ENSG00000186092) synonymous
-1:69149:T:A OR4F5(ENSG00000186092) missense(>=1/5)
-1:69173:A:T OR4F5(ENSG00000186092) missense(>=1/5)
-1:69202:A:G OR4F5(ENSG00000186092) missense(>=1/5)
-1:69217:G:A OR4F5(ENSG00000186092) missense(0/5)
-1:69224:A:T OR4F5(ENSG00000186092) missense(>=1/5)
-1:69231:C:T OR4F5(ENSG00000186092) synonymous
-1:69237:C:T OR4F5(ENSG00000186092) synonymous
-1:69254:T:C OR4F5(ENSG00000186092) missense(>=1/5)
-1:69263:A:G OR4F5(ENSG00000186092) missense(>=1/5)
-1:69270:A:G OR4F5(ENSG00000186092) synonymous
-1:69281:T:C OR4F5(ENSG00000186092) missense(>=1/5)
-1:69295:G:A OR4F5(ENSG00000186092) missense(>=1/5)
-1:69311:T:A OR4F5(ENSG00000186092) missense(>=1/5)
-
-wc -l "/mnt/project/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release/helper_files/ukb23158_500k_OQFE.annotations.txt.gz"
-170891
-
-wc -l "/mnt/project/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release/helper_files/ukb23158_500k_OQFE.sets.txt.gz"
-96402
-
-# check how many wes snp passed snplist
-# from all the logs, # = 16909+11966+9335+7096+7601+9945+8449+6100+7426+7563+10175+9099+3084+5366+5508+8047+9772+2914+12951+4636+2325+4367 = 170636
-# total traits = 14
-# p = 0.05/14/170636=2.093e-8
-# -log10p = 7.68
