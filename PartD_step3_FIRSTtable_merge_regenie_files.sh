@@ -1,4 +1,4 @@
-vi regmerge.sh
+vi d3.sh
 
 #!/bin/sh
 merge_cmd='out_file="assoc.regenie.merged.txt"
@@ -42,8 +42,8 @@ done
 
 
 # run
-chmod +x regmerge.sh
-bash regmerge.sh
+chmod +x d3.sh
+bash d3.sh
 
 # to rename all assoc.regenie.merged.txt
 for FIRST in {25011..25024}; do 
