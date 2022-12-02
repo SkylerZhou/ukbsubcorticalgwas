@@ -3,11 +3,6 @@ vi d2.sh
 
 # note: I changed all file path in pred.list into /mnt/project/Regenie1_PartB/FIRST/
 
-# Outputs (for each chromosome):
-# - /Data/assoc.c1_diabetes_cc.regenie.gz - regenie results for chromosome 1 
-# note that if you have multiple phenotypes, you will have a .regenie.gz for each phenotype
-# - /Data/assoc.c1.log  - regenie log for chromosome 1
-
 #change exome_file_dir and data_field for the newest release
 exome_file_dir="/Bulk/Exome sequences/Population level exome OQFE variants, PLINK format - final release"
 data_field="23158"
