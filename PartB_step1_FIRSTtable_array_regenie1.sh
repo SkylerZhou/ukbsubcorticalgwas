@@ -1,27 +1,7 @@
 # dx login
-vi partB.sh
+vi b1.sh
 
 #!/bin/sh
-
-# This script runs regenie step 1 on 
-# 1) merged file generated in PartA genoQC step1&step2 
-# 2) phenotable generated in PartA phenoQC 
-# 3) snplist generated in PartA genoQC step3
-# 4) id generated in PartA genoQC step3
-
-
-# Inputs:
-# Note that you can adjust the output directory by setting the data_file_dir variable
-# - /T1pheno_PartA/${pheno}/${pheno}table.phe - from partA 
-# - /T1geno_PartA/genoQC_step3/${pheno}_array_snps_qc_pass.snplist - from partB
-# - /T1geno_PartA/Liftover Data_step1_step2/ukb_c1-22_GRCh38_full_analysis_set_plus_decoy_hla_merged - from partB
-
-
-# Outputs:
-# - /Regenie1_PartB/${pheno}_results_1.loco.gz - Leave One Chromosome Out results (used in part F)
-# - /Regenie1_PartB/${pheno}_results_pred.list - List of files generated this step (used in part F)
-# - /Regenie1_PartB/${pheno}_results.log
-
 
 #output directory - this should also be where the files in 02-step1-qc-filter.sh end up
 pheno_file_dir="project-GFv8ZJQJGgfVjGjpJ7vB2X1p:/whitelist_strict/PartA"
@@ -49,4 +29,4 @@ dx run swiss-army-knife -iin="${geno_file_dir}/ukb_c1-22_GRCh38_full_analysis_se
    --destination="/whitelist_strict/PartB/" --brief --yes
 
 # run
-sh partB.sh
+sh b1.sh
