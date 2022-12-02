@@ -2,13 +2,10 @@
 vi b1.sh
 
 #!/bin/sh
-
-#output directory - this should also be where the files in 02-step1-qc-filter.sh end up
 pheno_file_dir="project-GFv8ZJQJGgfVjGjpJ7vB2X1p:/whitelist_strict/PartA"
 geno_file_dir="project-GFv8ZJQJGgfVjGjpJ7vB2X1p:/T1geno_PartA/Liftover Data_step1_step2"
 qc_file_dir="project-GFv8ZJQJGgfVjGjpJ7vB2X1p:/whitelist_strict/PartA"
 
-# --keep the whitenames used for this step needs to be uploaded 
 run_regenie_step1="regenie \
 --step 1 --out FIRST_results \
 --lowmem --bed ukb_c1-22_GRCh38_full_analysis_set_plus_decoy_hla_merged \
